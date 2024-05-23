@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru" color-scheme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta itemprop="keywords" name="keywords" content="web, fiction, education, novell, visual novell, virtual tour, online tour, tour, , apeiro, university, institute, college, Higher education, Secondary education, Admission, Applicants, Study area, Education platform, Interactive learning, Educational technologies, Web studio"><!--Keywords-->
+    <meta itemprop="description" name="description" content="Apeiro — веб-студия, специализирующаяся на создании цифровых площадок для организаций среднего и высшего профессионального образования. Мы предлагаем уникальный продукт – визуальную новеллу, позволяющую провести онлайн-экскурсию по учебному заведению в формате интерактивной визуальной новеллы."><!--Описание для поисковых систем-->
+    <meta name="robots" content="noarchive, nosnippet">
+    <meta name="theme-color" content="#ffffff"><!--Цвет поисковой строки-->
+    <title>Геоинформационные системы</title>
+    <link rel="shortcut icon" href="./static/logo.png">
+    <link rel="stylesheet" href="./static/css/preloader.min.css">
+</head>
+<body>
+    <noscript style="color: white; z-index: 999;">
+        <center><h1><b>---Внимание!---</b></h2></center>
+        <p>Если Вы видите этот баннер, значит в Вашем браузере отключёна поддержка Java Script.</p>
+        <p>Перед дальнейшим взаимодействие с данным приложением рекомендуем Вам разрешить использование Java Script в настройках Вашего браузера и перезагрузить страницу.</p>
+        <p>Это приложение использует JS как для отображения страниц, так и для обеспечения функциональности. Мы не собираем данные без согласия пользователя. Как и для чего используются персональные данные Вы можете узнать в нашей Политике конфиденциальности.</p>
+    </noscript>
+    <div id="app">
+        <canvas id="stars" class="hyper stop"></canvas>
+        <div class="preloader">
+            <svg class="ip" viewBox="0 0 256 128" width="256px" height="128px" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#ccc8c8"/>
+                    </linearGradient>
+                    <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
+                        <stop offset="0%" stop-color="#ccc8c8"/>
+                        <stop offset="100%" stop-color="#ffffff"/>
+                    </linearGradient>
+                </defs>
+                <g fill="none" stroke-linecap="round" stroke-width="16">
+                    <g class="ip__track" stroke="#ddd">
+                        <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"./>
+                        <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"./>
+                    </g>
+                    <g stroke-dasharray="240 720">
+                        <path class="ip__worm1" stroke="url(#grad1)" stroke-dashoffset="0" d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"./>
+                        <path class="ip__worm2" stroke="url(#grad2)" stroke-dashoffset="720" d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"./>
+                    </g>
+                </g>
+            </svg>
+            <h1>ЗАГРУЗКА...</h1>
+        </div>
+        <div class="body">
+            <header>
+                <nav>
+                    <picture>
+                        <source srcset="./static/images/logo.webp" alt="Логотип сова" class="logo link" height="64" width="63" type="image/webp">
+                        <source srcset="./static/images/logo.png" alt="Логотип сова" class="logo link" height="64" width="63" type="image/png"> 
+                        <img src="./static/images/logo.png" alt="Логотип сова" class="logo link">
+                    </picture>
+                    <a href="#intro" class="navButton big link">О ГИС</a>
+                    <a href="#projects" class="navButton link">Дешифрование</a>
+                    <a href="#price" class="navButton link">GeoMixer</a>
+                    <a href="#contacts" class="navButton link">Контакты</a>
+                    <div class="container">
+                        <form onsubmit="event.preventDefault();" class="search link">
+                            <input class="search__input" type="search" placeholder="Поиск" id="searchInput">
+                            <div class="search__icon-container">
+                                <label for="searchInput" class="search__label" aria-label="Search">
+                                    <svg viewBox="0 0 1000 1000" title="Search"><path fill="currentColor" d="M408 745a337 337 0 1 0 0-674 337 337 0 0 0 0 674zm239-19a396 396 0 0 1-239 80 398 398 0 1 1 319-159l247 248a56 56 0 0 1 0 79 56 56 0 0 1-79 0L647 726z"./></svg>
+                                </label>
+                                <button class="search__submit link" aria-label="Search">
+                                    <svg viewBox="0 0 1100 1100" title="Search"><path fill="currentColor" stroke="currentColor" stroke-width="50" d="M408 745a337 337 0 1 0 0-674 337 337 0 0 0 0 674zm239-19a396 396 0 0 1-239 80 398 398 0 1 1 319-159l247 248a56 56 0 0 1 0 79 56 56 0 0 1-79 0L647 726z"./></svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+                <div class="headBanner">
+                    <div class="headWrapper">
+                        <div class="space big"></div>
+                        <div class="headImageWrapper">
+                            <svg class="triangle" viewBox="0 0 100 100">
+                                <path class="triangle-line" d="M5 90 L50 0 L95 90 Z"./>
+                            </svg>
+                            <picture>
+                                <source srcset="./static/images/head.webp" alt="Афродита" class="head" media="(min-width: 767px)" type="image/webp">
+                                <source srcset="./static/images/head.png" alt="Афродита" class="head" media="(min-width: 767px)" type="image/png"> 
+                                <img src="./static/images/head.png" media="(min-width: 767px)" alt="Афродита" class="head">
+                            </picture>
+                            <svg class="triangle">
+                                <line x1="300" y1="303" x2="20" y2="303" stroke="white" stroke-width="10"./>
+                            </svg>
+                        </div>
+                        <div class="sloganWrapper">
+                            <div class="slogan">
+                                <h1 class="headerH textCur">ГИС</h1>
+                                <h2 class="headerH textCur">Применение</h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="128" height="90" class="apeiro">
+                                    <path fill="none" d="M24.3,30C8.6,30,5,43.3,5,50s4.4,20,19.3,20c19.3,0,32.1-40,51.4-40C90.6,30,95,43.3,95,50s-4.4,20-19.30,20C56.4,70,43.6,30,21.3,29.9" stroke="white" stroke-width="7" stroke-dasharray="0 256.58892822265625 2.3">
+                                        <animate attributeName="stroke-dashoffset" values="0;255.68892822265625" dur=".1" fill="freeze"></animate>
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space big"></div>
+                    </div>
+                </div>
+                <div class="space"></div>
+                <div class="hrWrapper"><hr/></div>
+            </header>
+            <div class="intro textCur" id="intro">
+                <div class="aboutH">
+                    <h1 style="font-weight: 800">О ГИС</h1>
+                    <h1 style="font-weight: 300">ПОНЯТИЕ</h1>
+                </div>
+                <div class="apo">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M5 90 L50 0 L95 90 Z"./>
+                    </svg>
+                    <svg viewBox="0 0 100 100">
+                        <path d="M5 90 L50 0 L95 90 Z"./>
+                    </svg>
+                </div>
+                <div class="textWrapper textCur">
+                    <p>
+                    Приветствуем вас в мире APEIRO — инновационной компании, вдохновленной образованием и технологиями. Мы — творческая команда экспертов в программировании, создании интерактивных учебных материалов и образовательных игр.
+                    </p><p>
+                    APEIRO символизирует бесконечный рост и развитие. Мы считаем образование ключом к будущему и стремимся сделать учебные заведения местом раскрытия потенциала через инновационные программы. 
+                    </p><p>
+                    Наш коллектив объединяет опытных разработчиков, дизайнеров и педагогов, создающих интеллектуально стимулирующие продукты. Мы разрабатываем персонализированные образовательные решения, подстраиваясь под стиль каждого ученика и делая учебный процесс более увлекательным.
+                    </p>    
+                </div>
+            </div>
+            <div class="pluses white textCur white-text">
+                <div class="aboutH plusesH" style="padding: 0; text-align: center;">
+                    <h1 class="aboutInline" style="font-weight: 800">ГИС</h1>
+                    <h1 class="aboutInline" style="font-weight: 300">ТЕХНОЛОГИИ</h1>
+                </div>
+                <div class="space big"></div>
+                <div class="plus">
+                    <picture>
+                        <source srcset="./static/images/01.webp" alt="01" class="num" loading="lazy" width="83" height="23" type="image/webp">
+                        <source srcset="./static/images/01.png" alt="01" class="num" loading="lazy" width="83" height="23" type="image/png"> 
+                        <img src="./static/images/01.png" alt="01" class="num" loading="lazy" width="83" height="23">
+                    </picture>
+                    <h1 class="plusName textCur white-text">GPS</h1>
+                    <div class="apo">
+                        <svg viewBox="0 0 60 60">
+                            <path d="M5 5 L30 40 L55 5 Z" fill="transparent"./>
+                        </svg>
+                        <svg viewBox="0 0 60 60">
+                            <path d="M5 5 L30 40 L55 5 Z" fill="transparent"./>
+                        </svg>
+                    </div>
+                    <span class="textCur white-text">
+                        В процессе разработки наших программ, а так же дизайн-решений мы активно пользуемся всеми современными технологиями, в том числе генеративными нейросяетями.
+                    </span>
+                </div>
+                <div class="space big"></div>
+                <div class="plus plus2">
+                    <picture>
+                        <source srcset="./static/images/02.webp" alt="02" class="num" loading="lazy" width="83" height="23" type="image/webp">
+                        <source srcset="./static/images/02.png" alt="02" class="num" loading="lazy" width="83" height="23" type="image/png"> 
+                        <img src="./static/images/02.png" alt="02" class="num" loading="lazy" width="83" height="23">
+                    </picture>
+                    <h1 class="plusName textCur white-text">ГЛОНАСС</h1>
+                    <div class="apo">
+                        <svg viewBox="0 0 60 60">
+                            <path d="M5 5 L30 40 L55 5 Z" fill="transparent"./>
+                        </svg>
+                        <svg viewBox="0 0 60 60">
+                            <path d="M5 5 L30 40 L55 5 Z" fill="transparent"./>
+                        </svg>
+                    </div>
+                    <span class="textCur white-text">
+                        Компания предлагает современный взгляд на визуальную составляющую продукта, что делает его привлекательным и актуальным на рынке IT.
+                    </span>
+                </div>
+                <div class="space big"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400" class="side" id="animated-svg">
+                    <path fill="none" d="M24.3,30C8.6,30,5,43.3,5,50s4.4,20,19.3,20c19.3,0,32.1-40,51.4-40C90.6,30,95,43.3,95,50s-4.4,20-19.30,20C56.4,70,43.6,30,21.3,29.9" stroke="#D7D7D7" stroke-width="8" stroke-dasharray="0 256.58892822265625 2.3">
+                        <animate attributeName="stroke-dashoffset" values="0;255.68892822265625" dur="1" fill="freeze"></animate>
+                    </path>
+                </svg>
+                <picture>
+                    <source srcset="./static/images/hand.webp" alt="Фон" class="side hand" loading="lazy" width="291" height="400" type="image/webp">
+                    <source srcset="./static/images/hand.png" alt="Фон" class="side hand" loading="lazy" width="291" height="400" type="image/png"> 
+                    <img src="./static/images/hand.png" alt="Фон" class="side hand" loading="lazy" width="291" height="400">
+                </picture>
+                <div class="phrases">
+                    <span class="phrase textCur white-text">Быстро. Качественно. Эффектно.</span>
+                    <span class="phrase big textCur white-text" style="color: #D7D7D7">Быстро. Качественно. Эффектно.</span>
+                </div>
+            </div>
+            <div class="pluses" id="projects">
+                <div class="aboutH cent textCur">
+                    <span>
+                        <h1 class="aboutInline" style="font-weight: 800">ДЕШИФРОВАНИЕ</h1>
+                        <h1 class="aboutInline" style="font-weight: 300">СНИМКОВ</h1>
+                    </span>
+                </div>
+                <div class="space big"></div>
+                <div class="plus plusSmallMargin">
+                    <div class="projectImg">
+                        <picture>
+                            <source srcset="./static/images/project01.webp" alt="Фон" class="projectImgImg" type="image/webp">
+                            <source srcset="./static/images/project01.jpg" alt="Фон" class="projectImgImg" type="image/png"> 
+                            <img src="./static/images/project01.jpg" alt="Фон" class="projectImgImg">
+                        </picture>
+                    </div>
+                    <h1 class="project textCur">ПРОЕКТ 001</h1>
+                    <span style="font-weight: 400" class="textCur">Нашим первым проектом, получившим поддержку от “Фонда содействия инноваций“ является игровая платформа, направленная на привлечение абитуриентов в среду обучения средних и высших образовательных учреждений.</span>
+                </div>
+                <div class="space big"></div>
+                <div class="plus plus2 plusSmallMargin">
+                    <div class="projectImg">
+                        <picture>
+                            <source srcset="./static/images/project02.webp" alt="Фон" class="projectImgImg" type="image/webp">
+                            <source srcset="./static/images/project02.png" alt="Фон" class="projectImgImg" type="image/png"> 
+                            <img src="./static/images/project02.png" alt="Фон" class="projectImgImg">
+                        </picture>
+                    </div>
+                    <h1 class="project textCur">ПРОЕКТ 002</h1>
+                    <span style="font-weight: 400" class="textCur">На стадии разработки находится следующий проект - цифровая платформа для организаций дополнительного образования. Целью данной платформы является автоматизация работы преподавателей и администрации.</span>
+                </div>
+                <div class="space big"></div>
+            </div>
+            <div class="money white" id="price">
+                <div class="aboutH textCur white-text">
+                    <h1 class="aboutInline white-text" style="font-weight: 800">ИНТЕРФЕЙС</h1>
+                    <h1 class="aboutInline white-text" style="font-weight: 300">GEOMIXER</h1>
+                </div>
+                <h3 class="textCur white-text">Количество предоставленных услуг зависит от выбранного вами тарифа</h3>
+                    <svg class="switch prev link" viewBox="0 0 110 110">
+                        <path d="M90 7 L10 52 L90 97 Z" fill="none" stroke="black" stroke-width="10"/>
+                    </svg>
+                <div id="item">
+                    <h1 class="textCur white-text">Базовый</h1>
+                    <div></div>
+                    <picture>
+                        <source srcset="./static/images/tar1.webp" alt="Тариф" class="itemImg" height="200" width="200" type="image/webp">
+                        <source srcset="./static/images/tar1.png" alt="Тариф" class="itemImg" height="200" width="200" type="image/png"> 
+                        <img src="./static/images/tar1.png" alt="Тариф" class="itemImg">
+                    </picture>
+                    <div></div>
+                    <p class="textCur white-text">Готовая платформа на основе ранее созданных без добавления дополнительных функций на программном уровне по желанию заказчика.</p>
+                </div>
+                    <svg class="switch next link" viewBox="0 0 110 110">
+                        <path d="M10 7 L90 52 L10 97 Z" fill="none" stroke="black" stroke-width="10"/>
+                    </svg>
+                <button id="more" class="link" onclick="download()">Узнать больше</button>
+                <picture>
+                    <source srcset="./static/images/coin.webp" alt="Фон" class="side coin" loading="lazy" width="291" height="400" type="image/webp">
+                    <source srcset="./static/images/coin.png" alt="Фон" class="side coin" loading="lazy" width="291" height="400" type="image/png"> 
+                    <img src="./static/images/coin.png" alt="Фон" class="side coin" loading="lazy" width="291" height="400">
+                </picture>
+                <picture>
+                    <source srcset="./static/images/owl.webp" alt="Фон" class="side owl" loading="lazy" width="300" height="300" type="image/webp">
+                    <source srcset="./static/images/owl.png" alt="Фон" class="side owl" loading="lazy" width="300" height="300" type="image/png"> 
+                    <img src="./static/images/owl.png" alt="Фон" class="side owl" loading="lazy" width="300" height="300">
+                </picture>
+            </div>
+            <center>
+                <div class="contacts" id="contacts">
+                    <picture>
+                        <source srcset="./static/images/girl.webp" alt="Девушка" height="600" class="girl" type="image/webp">
+                        <source srcset="./static/images/girl.png" alt="Девушка" height="600" class="girl" type="image/png"> 
+                        <img src="./static/images/girl.png" alt="Девушка" height="600" class="girl">
+                    </picture>
+                    <div class="contact">
+                        <h1 class="aboutInline">КОНТАКТЫ</h1>
+                    </div>
+                    <div class="mu">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="80" width="80" class="arrow">
+                            <path d="M2.38 7h12l-6 7-6-7z" stroke="white" fill="white"/>
+                            <path d="M10.37 8.11h-4v-6h4z" stroke="white" fill="white"/>
+                        </svg>
+                    </div>
+                    <div id="su">
+                        <a href="https://vk.com/apeirocomp" class="link">
+                            <picture>
+                                <source srcset="./static/images/VK.webp" alt="vk" class="ico" height="50" width="50" type="image/webp">
+                                <source srcset="./static/images/VK.png" alt="vk" class="ico" height="50" width="50" type="image/png"> 
+                                <img src="./static/images/VK.png" alt="vk" class="ico">
+                            </picture>
+                        </a>
+                        <a href="https://instagram.com/apeirocomp" class="link">
+                            <picture>
+                                <source srcset="./static/images/insta.webp" alt="inst" class="ico" height="50" width="50" type="image/webp">
+                                <source srcset="./static/images/insta.png" alt="inst" class="ico" height="50" width="50" type="image/png"> 
+                                <img src="./static/images/insta.png" alt="inst" class="ico">
+                            </picture>
+                        </a>
+                        <a href="https://t.me/VechnyZid" class="link">
+                            <picture>
+                                <source srcset="./static/images/telega.webp" alt="tg" class="ico" height="50" width="50" type="image/webp">
+                                <source srcset="./static/images/telega.png" alt="tg" class="ico" height="50" width="50" type="image/png"> 
+                                <img src="./static/images/telege.png" alt="tg" class="ico">
+                            </picture>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=79274977433" class="link">
+                            <picture>
+                                <source srcset="./static/images/whatsapp.webp" alt="whatsapp" class="ico" height="50" width="50" type="image/webp">
+                                <source srcset="./static/images/whatsapp.png" alt="whatsapp" class="ico" height="50" width="50" type="image/png"> 
+                                <img src="./static/images/whatsapp.png" alt="whatsapp" class="ico">
+                            </picture>
+                        </a>
+                        <a href="mailto:apeiro_seller@apeirocomp.ru" class="link">
+                            <picture>
+                                <source srcset="./static/images/gmail.webp" alt="mail" class="ico" height="50" width="50" type="image/webp">
+                                <source srcset="./static/images/gmail.png" alt="mail" class="ico" height="50" width="50" type="image/png"> 
+                                <img src="./static/images/gmail.png" alt="mail" class="ico">
+                            </picture>
+                        </a>
+                    </div>
+                    <picture>
+                        <source srcset="./static/images/moon.webp" alt="Фон" class="moon" type="image/webp">
+                        <source srcset="./static/images/moon.png" alt="Фон" class="moon" type="image/png"> 
+                        <img src="./static/images/moon.png" alt="Фон" class="moon">
+                    </picture>
+                </div>
+                <footer>
+                    <div class="big"></div>
+                    <div class="about1">
+                        <picture>
+                            <source srcset="./static/images/footerLogo.webp" alt="logo" class="footerLogo" type="image/webp">
+                            <source srcset="./static/images/footerLogo.png" alt="logo" class="footerLogo" type="image/png"> 
+                            <img src="./static/images/footerLogo.png" alt="logo" class="footerLogo">
+                        </picture>
+                        <div class="info textCur">
+                            <span id="ap">Общество с ограниченной ответственностью "АПЕЙРО"</span>
+                            <span>ОГРН 1231600054014</span>
+                        </div>
+                    </div>
+                    <div class="about2">
+                        <picture>
+                            <source srcset="./static/images/kpfu.webp" alt="KPFU" class="sponsor" type="image/webp">
+                            <source srcset="./static/images/kpfu.png" alt="KPFU" class="sponsor" type="image/png"> 
+                            <img src="./static/images/kpfu.png" alt="KPFU" class="sponsor">
+                        </picture>
+                        <picture>
+                            <source srcset="./static/images/edu.webp" alt="Министерство науки и образования" class="sponsor" type="image/webp">
+                            <source srcset="./static/images/edu.png" alt="Министерство науки и образования" class="sponsor" type="image/png"> 
+                            <img src="./static/images/edu.png" alt="Министерство науки и образования" class="sponsor">
+                        </picture>
+                        <picture>
+                            <source srcset="./static/images/fasie.webp" alt="Fasie" class="sponsor" type="image/webp">
+                            <source srcset="./static/images/fasie.png" alt="Fasie" class="sponsor" type="image/png"> 
+                            <img src="./static/images/fasie.png" alt="Fasie" class="sponsor">
+                        </picture>
+                    </div>
+                    <div class="big"></div>
+                </footer>
+            </center>
+        </div>
+    </div>
+    <script type="text/javascript" defer src="./static/js/hyper.js"></script>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" async href="./static/css/media.css">
+    <script type="text/javascript" async src="./static/js/main.js"></script>
+</body>
+</html>
