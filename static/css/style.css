@@ -1,4 +1,4 @@
-#su .link::nth-child(2) > img, #su .link::nth-child(2) > picture, #su .link::nth-child(2) > source{
+.kpfu{
   filter: invert(1);
 }
 *, *:before, *:after{
