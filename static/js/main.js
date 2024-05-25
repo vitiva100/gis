@@ -79,11 +79,9 @@ if(!isMobile){
     document.body.addEventListener('mouseleave', handleLeave);
     document.body.addEventListener('mouseenter', handleEnter);
 }
-window.addEventListener('resize', changeSpanContent);
 
 let lastResFind;
 updateSearch();
-changeSpanContent();
 document.addEventListener('mousemove', (e) => {
     const cursor = document.querySelectorAll(".custom-cursor");
     cursor.length === 0 && !pref && !isMobile && createCursor();
