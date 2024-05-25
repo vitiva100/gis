@@ -131,9 +131,9 @@ function tarUpdate(){
     <h1 class="textCur white-text">${json.title[tar]}</h1>
     <div></div>
     <picture>
-        <source srcset="/static/images/${json.imgSrc[tar]}.webp" alt="Тариф" class="itemImg" height="200" width="200" type="image/webp">
-        <source srcset="/static/images/${json.imgSrc[tar]}.png" alt="Тариф" class="itemImg" height="200" width="200" type="image/png"> 
-        <img src="/static/images/${json.imgSrc[tar]}.png" alt="Тариф" class="itemImg">
+        <source srcset="./static/images/${json.imgSrc[tar]}.webp" alt="Тариф" class="itemImg" height="200" width="200" type="image/webp">
+        <source srcset="./static/images/${json.imgSrc[tar]}.png" alt="Тариф" class="itemImg" height="200" width="200" type="image/png"> 
+        <img src="./static/images/${json.imgSrc[tar]}.png" alt="Тариф" class="itemImg">
     </picture>
     <div></div>
     <p class="textCur white-text">${json.description[tar]}</p>`;
