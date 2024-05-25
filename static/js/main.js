@@ -6,11 +6,18 @@ const pref = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 let tar = 0;
 var json = {
-    title: ['Базовый', 'Продвинутый', 'Базовый'],
-    imgSrc: ['tar1', 'tar2', 'tar1'],
-    description: ['Готовая платформа на основе ранее созданных без добавления дополнительных функций на программном уровне по желанию заказчика.', 
-    'Платформа на основе ранее созданных с добавлением или изменением базовых функций на программном уровне по желанию заказчика.',
-    'Готовая платформа на основе ранее созданных без добавления дополнительных функций на программном уровне по желанию заказчика.']
+    title: ['Запуск', 'Перемещение', 'Многоугольник', 'Измерение', 'Расстояние', 'Перемещение', 'Высота', 'Центрирование', 'Ссылка' 'Запуск'],
+    imgSrc: ['tar1', 'tar2', 'tar3', 'tar4', 'tar5', 'tar5', 'tar5', 'tar5', 'tar9', 'tar1'],
+    description: ['При помощи селектора в левом нижнем углу переключитесь в режим просмотра снимков.', 
+    '“Посетите” Зону 76, для этого введите в строке поиска координаты 37.401437, -116.86773.',
+    'При помощи инструмента “Многоугольник” рассчитайте примерную площадь территории  внутри внешнего кольца дорог.',
+    'Научитесь пользоваться инструментом “Измерение линий и углов” для того чтобы узнавать  направление дороги.',
+    'Используйте этот инструмент для измерения расстояния до Елабуги.',
+    'Отдалив карту, попробуйте перемещать ее вправо и влево. Какую особенность карты можно  отметить?',
+    'При помощи слоя просмотра рельефа определите, какая из двух точек находится выше и насколько?',
+    'Отцентрируйте карту, нажав ПКМ по любой точке и выбрав пункт “Центрировать” в появившемся меню.',
+    'Сохраните текущее состояние карты при помощи соответствующего инструмента.',
+    'При помощи селектора в левом нижнем углу переключитесь в режим просмотра снимков.']
 };
 
 async function search(textToFind, lastResFind){
@@ -40,13 +47,6 @@ function updateSearch(){
         if(e.keyCode === 13) 
             await search(document.querySelector('.search__input').value.trim().toLowerCase(), lastResFind);
     });
-}
-
-function changeSpanContent(){
-    let spanElement = document.querySelector("#ap");
-    spanElement.textContent = window.innerWidth < 340 ? 
-        `ООО "АПЕЙРО"` :
-        `Общество с ограниченной ответственностью "АПЕЙРО"`;
 }
 
 function createCursor(){
@@ -109,14 +109,7 @@ function listener(){
 }
 
 function download(){
-    var link = document.createElement("a");
-    link.setAttribute('download', "Apeiro_pricelist.pdf");
-    link.href = "./static/pricelist.pdf";
-    link.style.opacity = "0";
-    link.style.position = "absolute";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
+    window.location.href = "https://maps.kosmosnimki.ru";
 }
 
 function animateItem(animation, reverse = false){
@@ -151,47 +144,4 @@ function tarUpdate(){
 !pref && !isMobile && createCursor();
 listener();
 
-function preloadImages(images){
-    return new Promise((resolve, reject) => {
-        let loadedImages = 0;
-        for (let i = 0; i < images.length; i++) {
-            let img = new Image();
-            img.onload = () => {
-                loadedImages++;
-                if (loadedImages === images.length) {
-                    resolve();
-                    console.log("[preloadImages] Ready")
-                }
-            };
-            img.onerror = (errorMessage) => {
-                console.warn(`[preloadImages] Failed to load image: ${images[i]}`);
-                reject(errorMessage);
-            };
-            img.src = images[i];
-        }
-    });
-}
-
-async function testWebP(){
-    const elem = document.body;
-    const webP = new Image();
-    let flag = false;
-    await new Promise((resolve, reject) => {
-        webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
-        webP.onload = function() {
-            flag = true;
-            resolve();
-        };
-        webP.onerror = reject;
-    });
-    const imagesToPreload = [
-        `/static/images/tar1.${flag ? "webp" : "png"}`,
-        `/static/images/tar2.${flag ? "webp" : "png"}`
-    ];
-    console.log(`[webpStatus]: ${flag}`);
-    await preloadImages(imagesToPreload);
-}
-
 isMobile && window.removeEventListener('resize', setupStars);
-
-document.addEventListener("DOMContentLoaded", testWebP);
