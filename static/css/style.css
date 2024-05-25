@@ -1,5 +1,5 @@
 .kpfu{
-  filter: invert(1);
+  filter: invert(1) drop-shadow(0 0 8px black) !important;
 }
 *, *:before, *:after{
   -webkit-box-sizing: border-box;
