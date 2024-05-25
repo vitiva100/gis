@@ -172,7 +172,6 @@
   }
 }
 
-@media(prefers-reduced-motion: no-preference){
   *{
     cursor: none;
   }
@@ -444,4 +443,3 @@
               transform: rotate(0deg) translate(-80px, 170px);
     }
   }
-}
