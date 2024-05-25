@@ -97,7 +97,7 @@ document.addEventListener('mousemove', (e) => {
 
 function listener(){
     document.querySelector('.next').addEventListener('click', () => {
-        tar = tar < 2 ? tar + 1 : 1;
+        tar = tar < 9 ? tar + 1 : 1;
         animateItem("slideOut");
     });
     document.querySelector('.prev').addEventListener('click', () => {
